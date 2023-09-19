@@ -1,4 +1,4 @@
-from flask import Flask, redirect
+from flask import Flask, redirect, url_for
 app = Flask(__name__)
 
 @app.route("/")
@@ -45,15 +45,12 @@ def lab1():
         </header>
 
         <h1>web-сервер на flask</h1>
-        <div>  
+        <h3> <div>  
             Flask — фреймворк для создания веб-приложений на языке
             программирования Python, использующий набор инструментов
             Werkzeug, а также шаблонизатор Jinja2. Относится к категории так
-            называемых микрофреймворков — минималистичных каркасов
-
-            веб-приложений, сознательно предоставляющих лишь самые ба-
-            зовые возможности.
-        </div>
+            называемых микрофреймворков — минималистичных каркасов веб-приложений, сознательно предоставляющих лишь самые базовые возможности.
+        </div></h3>
 
         <footer>
             &copy; Карина Махмад, ФБИ-14, 3 курс, 2023
@@ -61,3 +58,17 @@ def lab1():
     </body>
 </html>
 """
+
+
+@app.route('/lab1/oak')
+def oak():
+    return '''
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="''' + url_for('static', filename='lab1.css') + '''">
+    <body>
+       <h1>Дуб</h1>
+       <img src="''' + url_for('static', filename='oak.jpeg') + '''">
+    </body>
+</html>
+'''
