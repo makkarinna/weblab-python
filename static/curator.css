@@ -1,0 +1,37 @@
+img {
+    height: 400px;
+    width: 600px;
+    margin-top: 10px;
+   
+    
+}
+
+
+body {
+    background-color: rgba(187, 187, 232, 0.556);
+
+}
+
+h1 {
+    text-align: center;
+   
+}
+
+.text {
+    float: right;
+}
+
+p {
+    margin-top: 20px;
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+.text3 {
+    margin-top: 50px;
+}
+
+.kartinka {
+    height: 100%;
+    width: 100%;
+}

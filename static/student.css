@@ -1,0 +1,14 @@
+body {
+    background-color: rgb(221, 125, 125);
+}
+
+img {
+    height: 100;
+    width: 100;
+}
+
+h1 {
+    color: black;
+    size: 100;
+    margin-left: 100;
+}
