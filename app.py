@@ -41,6 +41,13 @@ def example():
 def lab2():
     return render_template('lab2.html')
 
+@app.route('/lab2/old_money')
+def old():
+    
+    return render_template('old_money.html')
+
+
+
     
 
 
