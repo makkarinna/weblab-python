@@ -13,15 +13,18 @@
     </header>
 
     <main>
+        <div>Математические вычисления:</div>
         5 + 2 = {{ 5 + 2 }}<br>
         11 x 28 = {{ 11 * 28 }}<br>
         8452 / 793 = {{ 8452 / 793}}<br>
         45^8 = {{ 45**8 }}<br>
+        <div>Фрукты:</div>
         <ul>
             {% for f in fruits %}
             <li>{{ f.name }}: {{ f.price }} &#8381;</li>
             {% endfor %}
         </ul>
+        <div>Подборка книг:</div>
         <ul>
             {% for f in books %}
             <li>{{ f.autor }}: {{ f.name }}, Жанр: {{ f.zhanr }}, {{ f.str }} страниц</li>
