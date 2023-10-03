@@ -11,8 +11,8 @@ def start():
 def example():
     name = 'Махмад Карина'
     number = '2'
-    number_kurs = '3'
-    number_group = '14'
+    number_kurs = '3 курс'
+    number_group = 'ФБИ-14'
     return render_template('example.html', name=name, number=number, number_kurs=number_kurs, number_group=number_group)
 
 
