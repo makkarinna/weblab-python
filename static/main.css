@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+}
+
+main {
+    margin-bottom: 30px;
+    color: lightslategray;
+    font-size: 20px;
+    padding: 10px;
+}
+
+header {
+    margin-bottom: 30px;
+    padding: 20px;
+    background:  lemonchiffon;
+    font-size: 20px;
+}
+
+footer {
+    margin-top: 20px;
+    padding: 20px;
+    background: lemonchiffon;
+    text-align: right;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
