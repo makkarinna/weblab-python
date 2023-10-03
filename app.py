@@ -13,7 +13,18 @@ def example():
     number = '2'
     number_kurs = '3 курс'
     number_group = 'ФБИ-14'
-    return render_template('example.html', name=name, number=number, number_kurs=number_kurs, number_group=number_group)
+    fruits = [ 
+        {'name': 'личи', 'price': 500},
+        {'name': 'манго', 'price': 321}, 
+        {'name':'банан', 'price': 60},
+        {'name':'кокос', 'price':350},
+        {'name':'авокадо', 'price': 200}
+    ]
+    return render_template('example.html', 
+                           name=name, number=number, number_kurs=number_kurs, 
+                           number_group=number_group, fruits=fruits)
+
+    
 
 
 @app.route("/menu")
