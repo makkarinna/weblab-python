@@ -29,8 +29,10 @@ footer {
 }
 
 div {
-    text-align: center; 
+    margin-left: 20px;
     color: tan;
+    margin-bottom: 20px;
+    margin-top: 20px;
     
 }
 h2 {
@@ -40,3 +42,4 @@ h2 {
 .error {
     color: red;
 }
+

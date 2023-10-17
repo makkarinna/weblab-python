@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+
+{% block lab %}Лабораторная работа 3{% endblock %}
+
+{% block main %}
+
+    {% if name1 %}
+
+   
+    <h1>Вы успешно оформили билет!</h1>
+    <h2>Хорошей поездки!</h2>
+
+    <h3>Детали поездки:</h3>
+    <div>
+        Имя пассажира: {{ name1 }}
+    </div>
+    <div>
+        Фамилия пассажира: {{ fam1 }}
+    </div>
+    <div>
+        Отчество пассажира: {{ otc1 }}
+    </div>
+    <div>
+        Возраст пассажира: {{ age1 }}
+    </div>
+    <div>
+        Тип билета: {{ 'Взрослый' if type1 == 'human' else 'Детский' }}
+    </div>
+    <div>
+        Багаж: {{ 'Не нужен' if bag == 'bag-no' else 'Нужен' }}
+    </div>
+    <div>
+        Полка: {{ polk }}
+    </div>
+    <div>
+        Пункт выезда: {{ punktv }}
+    </div>
+    <div>
+        Пункт назначения: {{ punktnaz }}
+    </div>
+    <div>
+        Дата поездки: {{ data1 }}
+    </div>
+
+    {% else %}
+
+    <h1 style="color: royalblue;">Покупка железнодорожного билета</h1>
+
+    <form>
+        <label>Имя пассажира:</label>
+        <div>
+            <input style="width: 200px;" type="text" placeholder="Введите имя пассажира" name="name1" value="{{ name1 or '' }}">
+            <span class="error2">{{ errors2.name1 }}</span>
+        </div>
+
+        <label>Фамилия пассажира:</label>
+        <div>
+            <input style="width: 200px;" type="text" placeholder="Введите фамилию пассажира" name="fam1" value="{{ fam1 or '' }}">
+            <span class="error4">{{ errors4.fam1 }}</span>
+        </div>
+
+        <label>Отчество пассажира:</label>
+        <div>
+            <input style="width: 200px;" type="text" placeholder="Введите отчество пассажира" name="otc1" value="{{ otc1 or '' }}">
+            <span class="error5">{{ errors5.otc1 }}</span>
+        </div>
+
+        <label>Тип билета:</label>
+        <div>
+            <select name="type1">
+                <option value="child" {{ type1 == 'child' and 'selected' }}>Детский</option>
+                <option value="human" {{ type1 == 'human' and 'selected' }}>Взрослый</option>
+            </select>
+        </div>
+
+        <label>Полка:</label>
+        <div>
+            <select name="polk">
+                <option value="niz" >Нижняя</option>
+                <option value="verh" >Верхняя</option>
+                <option value="niz-bok" >Нижняя боковая</option>
+                <option value="verh-bok" >Верхняя боковая</option>
+            </select>
+        </div>
+
+        <label>Багаж:</label>
+        <div>
+            <select name="bag">
+                <option value="bag-yes" {{ bag == 'bag-yes' and 'selected' }}>Багаж нужен</option>
+                <option value="bag-no" {{ bag == 'bag-no' and 'selected' }}>Багаж не нужен</option>
+            </select>
+        </div>
+
+        <label>Возраст пассажира:</label>
+        <div>
+            <input style="width: 200px;" type="number" placeholder="Введите возраст пассажира" name="age1" min="18" max="120" value="{{ age1 or '' }}">
+            <span class="error3">{{ errors3.age1 }}</span>
+        </div>
+
+        <label>Пункт выезда:</label>
+        <div>
+            <input style="width: 200px;" type="text" placeholder="Введите пункт выезда" name="punktv" value="{{ punktv or '' }}">
+            <span class="error7">{{ errors7.punktv }}</span>
+        </div>
+
+        <label>Пункт назначения:</label>
+        <div>
+            <input style="width: 200px;" type="text" placeholder="Введите пункт назначения" name="punktnaz" value="{{ punktnaz or '' }}">
+            <span class="errors6">{{ errors6.punktnaz }}</span>
+        </div>
+
+        <label>Дата поездки:</label>
+        <div>
+            <input type="date" name="data1" value="{{ data1 or '' }}">
+            <span class="error8">{{ errors8.data1 }}</span>
+        </div>
+
+        
+        <div>
+            <button type="submit">Перейти к покупке</button>
+        </div>
+    </form>
+
+
+
+   
+
+    {% endif %}
+{% endblock %}
