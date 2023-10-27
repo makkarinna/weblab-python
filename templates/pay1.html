@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block lab %}Лабораторная работа 4{% endblock %}
+
+{% block main %}
+   
+<div>Заказ успешно сформирован. Вы заказали {{ zer }}. Вес {{ ves }} т.</div>
+    <div style="color: royalblue">Сумма к оплате: {{ total_price }}</div>
+    <div style="color: red;">{{ idk }}</div>
+    <a style="text-decoration: none; color: lightslategray" href="/lab4/zerno">&#8592;Вернуться</a>
+    <form >
+    
+    </form>
+{% endblock %}

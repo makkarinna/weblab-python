@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block lab %} Лабораторная работа 4 {% endblock %}
+
+{% block main %}
+
+    <h1>Заказ зерна</h1>
+    <form method="post" action="/lab4/pay1">
+
+        <h1>
+            Цены зeрна:
+        </h1>
+
+        <div>
+            Ячмень: 12 000 руб/т.<br>
+            Овес: 8 500 руб/т.<br>
+            Пшеница: 8 9700 руб/т.<br>
+            Рожь: 14 000 руб/т.<br>
+        </div>
+       
+        <label>Выберете тип зерна:</label>
+        <div>
+            <select name="zerno">
+                <option name="yach" value="yach">Ячмень</option>
+                <option name="ov" value="ov">Овес</option>
+                <option name="pchen" value="pchen">Пшеница</option>
+                <option name="roz" value="roz">Рожь</option>
+            </select>
+        </div>
+        <input type="number" id="ves" name="ves" placeholder="Введите вес в тоннах">
+        <button type="submit">Оформить заказ</button>
+
+        </div>
+       
+
+        
+    
+        
+    </form>
+
+{% endblock %}
