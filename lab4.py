@@ -110,9 +110,20 @@ def pay():
     if ves <= 0:
         total_price = 'Ошибка!'
         idk = 'Неверное значение веса'
-
         
     return render_template('pay1.html', zerno=zerno, price=price, zer=zer, ves=ves, total_price=total_price, idk=idk)
+
+@lab4.route('/lab4/cookies', methods = ['GET', 'POST'])
+def cookies():
+    if request.method == 'GET':
+        return render_template ('cookies.html')
+    
+    color = request.form.get('color')
+    headers = {
+        'Set-Cookie': 'color=' + color + '; path=/',
+        'Location': '/lab4/cookies'
+    }
+    return '', 303, headers
  
     
   
