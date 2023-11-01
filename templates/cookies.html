@@ -4,10 +4,23 @@
 
 {% block main %}
     <h1>Cookies</h1>
+    {% if error %}
+    <div style="color: red;">{{ error }}</div>
+{% endif %}
     <form method="post">
         <div>
-            <label for="color">Выбирите цвет:</label>
-            <input type="color" id="color" name="color">
+            <label for="color">Выбирите цвет текста:</label>
+            <input type="color" id="color" name="color" value="{{ request.cookies.get('color') }}">
+        </div>
+
+        <div>
+            <label for="background-color">Выбирите цвет фона:</label>
+            <input type="color" id="bg_color" name="bg_color" value="{{ request.cookies.get('bg_color') }}">
+        </div>
+
+        <div>
+            <label for="font_size">Выберите размер шрифта(от 5 до 30):</label>
+            <input type="number" id="font_size" name="font_size" min="5" max="30" value="{{ request.cookies.get('font_size') }}">
         </div>
 
         <div>
