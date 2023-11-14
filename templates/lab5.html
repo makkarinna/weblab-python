@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block lab %}Лабораторная работа 5{% endblock %}
+
+{% block main %}
+    <h1>Лабораторная работа 5. Flask и БД</h1>
+    <div>Страницы:</div>
+    <ol>
+        <li>
+            <a href="/lab5/reg">Авторизация</a>
+        </li>
+     
+        <li>
+            <a href="/lab5/zametki">Просмотр заметок</a>
+        </li>
+
+        <li>
+            <a href="/lab5/login">Ссылка логина</a>
+        </li>
+
+        <li>
+            <a href="/lab5/anon">Ввод имени пользователя</a>
+        </li>
+    </ol>
+{% endblock %}

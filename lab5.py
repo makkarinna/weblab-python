@@ -33,3 +33,12 @@ def main():
 
     return "go to console"
 
+
+@lab5.route('/lab5/site')
+def fife():
+    return render_template('lab5.html')
+
+
+@lab5.route('/lab5/reg')
+def lab():
+    return render_template('lab5_reg.html')
