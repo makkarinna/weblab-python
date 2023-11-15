@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block lab %} Лабораторная работа 5 {% endblock %}
+
+{% block main %}
+    <p>
+     
+        <a style="text-decoration: none; color:brown" href="/lab5/articles">Просмотреть заметки</a><br>
+        <a style="text-decoration: none; color:brown" href="/lab5/zametki">Создать заметки</a><br>
+        <a style="text-decoration: none;" href="/lab5/login">
+            <button class="log1" type="submit">Логин</button>
+        </a>
+        <a style="text-decoration: none;" href="/lab5/reg">
+            <button class="log2" type="submit">Регистрация</button>
+        </a>
+    
+
+        {% if username %}
+            <a> Пользователь: 
+            {{ username }}</a>
+        {% else %}
+            <a style="font-weight: bold;">Анон</a>
+        {% endif %}
+        </p>
+    </div>
+
+    <div>Статьи пользователя, {{ username }}</div>
+    <h1>Мои статьи</h1>
+    <ul>
+        {% for article in articles %}
+        <li>{{ article.title }} <a href="/lab5/articles/{{ article.id }}">/lab5/articles/{{ article.id }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
