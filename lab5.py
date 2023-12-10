@@ -19,6 +19,7 @@ def dbConnect():
 def dbClose(cursor, connection):
 
     #закрываем курсор и соединение 
+    #курсор хранит select(возращает данные)
     cursor.close()
     connection.close()
 
@@ -106,7 +107,7 @@ def reg():
 
         return render_template('lab5_reg.html', errors=errors)
     
-    #если мы попали сюда, то значит в cui.fetchone нет ни одной строки
+    #если мы попали сюда, то значит в cur.fetchone нет ни одной строки
     #пользователя с таким логином не существует
     #сохраняем пароль в виде хэша Бд
     cur.execute("INSERT INTO users (username, password) VALUES (%s, %s);", (user_name, hashPassword))
@@ -172,7 +173,7 @@ def create():
     username = session.get('username')
 
     if userID is not None:
-        #если пользователь авторищирован
+        #если пользователь авторизирован
 
         if request.method == 'GET':
             return render_template('zametki.html')
@@ -207,6 +208,8 @@ def create():
 @lab5.route("/lab5/articles/<int:article_id>")
 def getArticle(article_id):
     userID = session.get('id')
+    text = 'Не найден'
+    articleBody = ['']
 
     #проверка авторизирован ли пользователь
     if userID is not None:

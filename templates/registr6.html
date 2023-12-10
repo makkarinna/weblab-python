@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block lab %} Лабораторная работа 6 {% endblock %}
+
+{% block main %}
+    <div class="ramka">
+    
+        <form method="post">
+            <h1 style="text-align: center;">Страница регистрации</h1>
+
+            <div>
+                <label for="username">Логин</label>
+            </div>
+            <div>
+                <input  class="pole_tiket" type="text" name="username" placeholder="username">
+            </div>
+
+            <div>
+                <label for="password">Пароль</label>
+            </div>
+            <div>
+                <input  class="pole_tiket" type="text" name="password" placeholder="password">
+            </div>
+            
+            {% for error in errors %}
+                {{ error }}
+            {% endfor %}
+
+            <button style="height: 30px;
+            color: rgb(238, 72, 99);
+            background-color: white;
+            font-size: 12pt;
+            font-weight: bold;
+            border: 2px black;
+            border-radius: 5px;" class="pole_tiket" type="submit">Зарегистрироваться</button>
+        </form>
+
+    </div>
+
+{% endblock %}
