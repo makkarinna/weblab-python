@@ -27,6 +27,7 @@ def menu():
         <li><a href='/lab3'>Лабораторная 3</a></li>
         <li><a href='/lab4'>Лабораторная 4</a></li>
         <li><a href='/lab5/site'>Лабораторная 5</a></li>
+        <li><a href='/lab7/'>Лабораторная 7</a></li>
 
         <footer>
             &copy; Карина Махмад, ФБИ-14, 3 курс, 2023
