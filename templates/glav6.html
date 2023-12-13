@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block lab %} Лабораторная работа 6 {% endblock %}
+
+{% block main %}
+    <div class="glav_verh">
+        <div style="display: inline;
+                    color: rgb(75, 75, 251);
+                    height: 30px;
+                    font-size: 16pt;
+                    font-weight: bold;
+                    ">
+        База знаний
+        </div>
+        <div class="zam1"><a href="/lab6/articles">Посмотреть заметки</a></div>
+        <div class="zam2"><a href="/lab6/newtitle">Создать заметки</a></div>
+        <form action="/lab6/login">
+            <button class="b1" type="submit">Логин</button>
+        </form>
+        <form style="margin-left: 2%;" action="/lab6/registr">
+            <button class="b2" type="submit">Регистрация</button>
+        </form>
+        <form style="margin-left: 2%;" method="POST" action="/lab6/logout">
+            <button class="b2" type="submit">Выход</button>
+        </form>
+
+        {% if current_user.username  %}
+            <div style="font-weight: bold;
+            margin-left: 1%;" 
+            >
+            {{ current_user.username  }}</div>
+        {% else %}
+            <div style="font-weight: bold;">Anon</div>
+        {% endif %}
+    </div>
+
+{% endblock %}
