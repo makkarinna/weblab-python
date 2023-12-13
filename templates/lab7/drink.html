@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block lab %} Лабораторная работа 7 {% endblock %}
+
+{% block main %}
+
+<h1>Заказ напитка</h1>
+
+    <div>Напиток:</div><br>
+    <label>
+        <input type="radio" value="coffee" name="drink" checked>кофе
+    </label><br>
+    <label>
+        <input type="radio" value="black-tea" name="drink" checked>черный чай
+    </label><br>
+    <label>
+        <input type="radio" value="green-tea" name="drink" checked>зеленый чай
+    </label><br><br>
+    <div>Добавки:</div>
+    <label><br>
+        <input type="checkbox" name="milk">молоко
+    </label>
+    <label><br>
+        <input type="checkbox" name="sugar">сахар
+    </label><br><br>
+
+    <div>
+        <button onclick="getPrice()">Рассчитать цену</button>
+    </div>
+
+    <div id="price"></div>
+
+    <div id="pay" style="display: None;">
+        <div>Номер банковской карты</div>
+    <label>
+        <input type="text" name="card">
+    </label>
+
+    <div>Имя держателя карты:</div>
+    <label>
+        <input type="text" name="name">
+    </label>
+
+    <div>Номер CVV:</div>
+    <label>
+        <input type="text" name="cvv" size="3">
+    </label>
+
+    <div>
+        <button onclick="pay()">Оплатить</button>
+    </div>
+    <div>
+        <button onclick="cancel_pay()">Отмена оплаты</button>
+    </div>
+
+    <div id="pay-status"></div>
+</div>
+
+{% endblock %}
